@@ -12,11 +12,13 @@ namespace BookTest.Models
         /// Type
         /// </summary>
         [Key]
+        [Required]
         public string Type { get; set; }
 
         /// <summary>
         /// Name
-        /// </summary>
+        /// </summary> 
+        [Required]
         public string Name { get; set; }
 
     }

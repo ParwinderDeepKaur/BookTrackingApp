@@ -13,11 +13,13 @@ namespace BookTest.Models
         /// ISBNNumber
         /// </summary>
         [Key]
+        [Required]
         public string ISBNNumber { get; set; }
 
         /// <summary>
         /// Title
         /// </summary>
+        [Required]
         public string Title { get; set; }
 
         /// <summary>
@@ -33,7 +35,8 @@ namespace BookTest.Models
 
         /// <summary>
         /// Author
-        /// </summary>
+        /// </summary> 
+        [Required]
         public string Author { get; set; }
     }
 }

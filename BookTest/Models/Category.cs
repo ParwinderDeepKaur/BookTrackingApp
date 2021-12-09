@@ -13,11 +13,13 @@ namespace BookTest.Models
         /// NameToken
         /// </summary>
         [Key]
+        [Required]
         public string NameToken { get; set; }
 
         /// <summary>
         /// Description
         /// </summary>
+        [Required]
         public string Description { get; set; }
 
         /// <summary>

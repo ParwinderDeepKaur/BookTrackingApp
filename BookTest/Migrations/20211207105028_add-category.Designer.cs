@@ -2,39 +2,20 @@
 using BookTest.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace BookTest.Migrations
 {
     [DbContext(typeof(BookTestDBContext))]
-    partial class BookTestDBContextModelSnapshot : ModelSnapshot
+    [Migration("20211207105028_add-category")]
+    partial class addcategory
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
                 .HasAnnotation("ProductVersion", "5.0.2");
-
-            modelBuilder.Entity("BookTest.Models.Book", b =>
-                {
-                    b.Property<string>("ISBNNumber")
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("Author")
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("CategoryId")
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("Title")
-                        .HasColumnType("TEXT");
-
-                    b.HasKey("ISBNNumber");
-
-                    b.HasIndex("CategoryId");
-
-                    b.ToTable("Book");
-                });
 
             modelBuilder.Entity("BookTest.Models.Category", b =>
                 {
@@ -66,15 +47,6 @@ namespace BookTest.Migrations
                     b.HasKey("Type");
 
                     b.ToTable("CategType");
-                });
-
-            modelBuilder.Entity("BookTest.Models.Book", b =>
-                {
-                    b.HasOne("BookTest.Models.Category", "Categories")
-                        .WithMany()
-                        .HasForeignKey("CategoryId");
-
-                    b.Navigation("Categories");
                 });
 
             modelBuilder.Entity("BookTest.Models.Category", b =>
