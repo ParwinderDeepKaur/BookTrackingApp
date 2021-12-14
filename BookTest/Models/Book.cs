@@ -14,6 +14,7 @@ namespace BookTest.Models
         /// </summary>
         [Key]
         [Required]
+        [Display(Name = "ISBN Number")]
         public string ISBNNumber { get; set; }
 
         /// <summary>
@@ -26,6 +27,7 @@ namespace BookTest.Models
         /// CategoryId
         /// </summary>
         [ForeignKey("CategoryId")]
+        [Display(Name = "Category")]
         public string CategoryId { get; set; }
 
         /// <summary>

@@ -39,6 +39,7 @@ namespace BookTest.Pages.Admin.Books
             if (BookExists(Book.ISBNNumber))
             {
                 ModelState.AddModelError(string.Empty, "ISBN Number Already Exists.");
+                ViewData["CategoryId"] = new SelectList(_context.Categories, "NameToken", "NameToken");
                 return Page();
             }
             else {

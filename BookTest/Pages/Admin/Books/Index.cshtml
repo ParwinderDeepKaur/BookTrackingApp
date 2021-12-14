@@ -5,14 +5,17 @@
     ViewData["Title"] = "Index";
 }
 
-<h1>Index</h1>
+<h1 class="set-header">Books</h1>
 
 <p>
-    <a asp-page="Create">Create New</a>
+    <a class="btn-primary set-button" asp-page="Create">Create New</a>
 </p>
 <table class="table">
     <thead>
         <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Book[0].ISBNNumber)
+            </th>
             <th>
                 @Html.DisplayNameFor(model => model.Book[0].Title)
             </th>
@@ -29,6 +32,9 @@
 @foreach (var item in Model.Book) {
         <tr>
             <td>
+                @Html.DisplayFor(modelItem => item.ISBNNumber)
+            </td>
+            <td>
                 @Html.DisplayFor(modelItem => item.Title)
             </td>
             <td>
@@ -38,9 +44,9 @@
                 @Html.DisplayFor(modelItem => item.Author)
             </td>
             <td>
-                <a asp-page="./Edit" asp-route-id="@item.ISBNNumber">Edit</a> |
-                <a asp-page="./Details" asp-route-id="@item.ISBNNumber">Details</a> |
-                <a asp-page="./Delete" asp-route-id="@item.ISBNNumber">Delete</a>
+                <a class="btn-success set-button" asp-page="./Edit" asp-route-id="@item.ISBNNumber">Edit</a> |
+                <a class="btn-primary set-button" asp-page="./Details" asp-route-id="@item.ISBNNumber">Details</a> |
+                <a class="btn-danger set-button" asp-page="./Delete" asp-route-id="@item.ISBNNumber">Delete</a>
             </td>
         </tr>
 }

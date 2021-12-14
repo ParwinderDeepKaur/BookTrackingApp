@@ -14,6 +14,7 @@ namespace BookTest.Models
         /// </summary>
         [Key]
         [Required]
+        [Display(Name = "Name Token")]
         public string NameToken { get; set; }
 
         /// <summary>
@@ -26,6 +27,7 @@ namespace BookTest.Models
         /// TypeId
         /// </summary>
         [ForeignKey("TypeId")]
+        [Display(Name = "Type")]
         public string TypeId { get; set; }
 
         /// <summary>

@@ -40,6 +40,7 @@ namespace BookTest.Pages.Admin.Categories
             if (CategoryExists(Category.NameToken))
             {
                 ModelState.AddModelError(string.Empty, "Name Token Already Exists.");
+                ViewData["TypeId"] = new SelectList(_context.CategType, "Type", "Type");
                 return Page();
             }
             else
